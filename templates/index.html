@@ -6,12 +6,37 @@
     <title>Produtos</title>
 </head>
 <body>
-    <h1>Produtos</h1>
+    <h1>Adicionar produtos</h1>
     <form action="/add" method="POST">
         <input type="text" name="nomeProduto" placeholder="Nome do produto">
         <input type="text" name="descricaoProduto" placeholder="Descrição do produto"> 
         <input type="file" name="imagemProduto"/>
         <button type="submit">Adicionar</button>
     </form>
+    <h1>Vizualizar produtos</h1>
+    <ul>
+
+        <h6>ID produto</h6>
+        {% for produto in produto %}
+        <li>{{ produto[0] }}</li>
+        {% endfor %}
+
+        <h6>Nome produto</h6>
+        {% for produto in produto %}
+        <li>{{ produto[1] }}</li>
+        {% endfor %}
+
+        <h6>Descrição produto</h6>
+        {% for produto in produto %}
+        <li>{{ produto[2] }}</li>
+        {% endfor %}
+
+        <h6>Imagem produto</h6>
+        {% for produto in produto %}
+        <li><img src="{{ produto[3] }}"></li>
+        {% endfor %}
+
+
+    </ul>
 </body>
 </html>
